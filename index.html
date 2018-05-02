@@ -20,7 +20,7 @@
   </head>
   <body>
     <body>
-      <h1 clss="saludo">Hola , este es el curso de Codigo Facilito</h1>
+      <h1 class="saludo">Hola , este es el curso de Codigo Facilito</h1>
       <p id="parrafo">Saludo desde un parrafo</p>
       <div>:3 :)</div>
      <div></div>
@@ -41,11 +41,16 @@
     //$('h1').ready(function(){
     //  alert("cuarta forma a traves de un selector");
     //});
-    $.when( $.ready, $.getScript("js/index.js") ).then(function() {
-    console.log("paso");
-    }).catch( function(){
-    console.log("no paso");
-    });
+    //$.when( $.ready, $.getScript("js/index.js") ).then(function() {
+    //console.log("paso");
+    //}).catch( function(){
+    //console.log("no paso");
+   // });
+   $(function(){
+     //getters y setters
+     var s = $('.saludo').html();
+     alert(s);
+   });
       </script>
     </body>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
