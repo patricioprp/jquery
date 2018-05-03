@@ -32,9 +32,24 @@
     <script>
    $(function(){
 //Iterar elementos con for of
-var numbers = [1,4,6,2];
-for(let num of numbers){
-console.log(num);
+var colors = [{
+    "colors":[{
+        "colorName":"red",
+        "hexValue":"#f00"
+    },
+    {
+        "colorName":"green",
+        "hexValue":"#0f0"
+    },
+    {
+        "colorName":"blue",
+        "hexValue":"#00f"
+    }]
+}];
+for(let color of colors){
+console.log(color);//muestra el objeto array
+console.log(color.colors[0]);//muestra un determinado objeto del array
+console.log(color.colors[0].colorName);//muestra una determinada propiedad(color)del array
 }
    });
       </script>
