@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Curso de Jquery</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<center>
+    <h1><i class="fa fa-volume-up" id="icon"></i></h1>
+    <ul id="colors">
+        <li>Orange</li>
+        <li>Purple</li>
+        <li>White</li>
+    </ul>
+</center>
+     <script src="js/jquery.min.js"></script>
+     <script src='https://use.fontawesome.com/e622d3b53e.js'></script>
+    <script>
+   $(function(){
+//Metodo data
+$('#icon').mousedown(function(){ //mouseover es una variante de mousedown, la cual se activa cuando se posa el puntero del mouse en el icono
+    $('#icon').data('status','cambiando');
+    $('#icon').addClass('fa-volume-off').removeClass('fa-volume-up');
+    console.log($('#icon').data('status'));
+   });
+   $('#icon').mouseup(function(){ //si usamos mouseover debemos cambiar mouseup por mouseleave
+    $('#icon').data('status','cambio');
+    $('#icon').addClass('fa-volume-up').removeClass('fa-volume-off');
+    console.log($('#icon').data('status'));
+   });
+
+   });
+      </script>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
