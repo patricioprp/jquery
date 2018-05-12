@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Curso de Jquery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<title>Curso de Jquery</title>  
+</head>
+  <body style="height: 1500px">
+      <h1>Padres, hijos y hermanos</h1>
+      <center>
+          <ol id="padre-ol">
+              <li>elemento 1</li>
+              <li class="hijo">elemento 2</li>
+              <li>elemento 3</li>
+              <li>elemento 4</li>
+          </ol>
+          <button id="exe">ejecutar</button>
+      </center>
+     <script src="js/jquery.min.js"></script>
+     <script src="https://use.fontawesome.com/e622d3b53e.js"></script>
+    <script>
+        //Creando elementos virtuales
+   $(function(){
+       var hijos= $('#padre-ol').children().text();
+       var padre = $('.hijo').parent();
+       var hermanos= $('.hijo').siblings().text();
+       console.log(hijos);
+       console.log(padre);
+       console.log(hermanos);
+       $('#exe').click(function(){
+           var li = $('<li>',{text:'ese es el texto agregado'});
+           $(li).append().addClass('vElement');
+           $('#padre-ol').append(li);
+           $('.vElement').click(function(){
+               console.log('se cliqueo en el elemento nuevo');
+               alert('este es un elemento virtual');
+           });
+       });
+   });
+      </script>
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+</html>
