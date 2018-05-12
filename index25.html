@@ -9,37 +9,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 <title>Curso de Jquery</title>  
 </head>
-  <body style="height: 1500px">
-      <h1>Padres, hijos y hermanos</h1>
-      <center>
-          <ol id="padre-ol">
-              <li>elemento 1</li>
-              <li class="hijo">elemento 2</li>
-              <li>elemento 3</li>
-              <li>elemento 4</li>
-          </ol>
-          <button id="exe">ejecutar</button>
-      </center>
+  <body>
+<h1>JSON.Parse</h1>
      <script src="js/jquery.min.js"></script>
      <script src="https://use.fontawesome.com/e622d3b53e.js"></script>
     <script>
-        //Creando elementos virtuales
+        //JSON.Parse()
    $(function(){
-       var hijos= $('#padre-ol').children().text();
-       var padre = $('.hijo').parent();
-       var hermanos= $('.hijo').siblings().text();
-       console.log(hijos);
-       console.log(padre);
-       console.log(hermanos);
-       $('#exe').click(function(){
-           var li = $('<li>',{text:'ese es el texto agregado'});
-           $(li).append().addClass('vElement');
-           $('#padre-ol').append(li);
-           $('.vElement').click(function(){
-               console.log('se cliqueo en el elemento nuevo');
-               alert('este es un elemento virtuall');
-           });
-       });
+     //var obj = JSON.parse('{"name":"Luis","lastname":"Zelaya"}');
+     var cad = '{"name":"Luis","lastname":"Zelaya","edad":31}';
+     var obj = JSON.parse(cad);
+     console.log(obj.name+" "+obj.lastname+" "+obj.edad);
+     
    });
       </script>
     
