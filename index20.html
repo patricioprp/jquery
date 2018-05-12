@@ -37,15 +37,16 @@
       </center>
      <script src="js/jquery.min.js"></script>
      <script src="https://use.fontawesome.com/e622d3b53e.js"></script>
+     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script>
    $(function(){
-//Metodo animate
+//Metodo duracion y velocidad de animaciones
    $('body').keyup(function(event){
        if(event.keyCode == 37){
-        $('.cubo').animate({'left':'-=50px'});
+        $('.cubo').animate({'left':'-=50px'},'slow');
         console.log('left');
        }else if(event.keyCode == 39){
-        $('.cubo').animate({'left':'+=50px'});
+        $('.cubo').animate({'left':'+=50px'},'fast');
         console.log('rigth');
        }else if(event.keyCode == 38){
         $('.cubo').animate({'top':'-=50px'});
@@ -56,6 +57,12 @@
        }else{
            console.log("Presione las teclas de direccion");
        }
+   });
+   $('.cubo').click(function(){
+       $(this).animate({
+           height: ['+=50','swing'],
+           width: ['+=100','linear']
+       });
    });
    /* $('#left').click(function(){
         $('.cubo').animate({'left':'-=50px'});
