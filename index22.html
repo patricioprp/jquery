@@ -9,18 +9,32 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body style="height: 1500px">
+      <h1>Hola codigo facilito</h1>
       <center>
-          <h1>Hola codigo facilito</h1>
-          <button style="margin-top: 1400px" id="up">UP</button>
+          <ol>
+              <li>elemento 1</li>
+              <li>elemento 2</li>
+              <li>elemento 3</li>
+              <li>elemento 4</li>
+          </ol>
+          <button id="exe">ejecutar</button>
       </center>
      <script src="js/jquery.min.js"></script>
      <script src="https://use.fontawesome.com/e622d3b53e.js"></script>
     <script>
-        //Eventos del Scroll
+        //crear,copiar,mover y remover elementos
    $(function(){
-     $('#up').click(function(){
-         $('body').animate({scrollTop:0},'700');
-         console.log('click en el boton');
+     $('#exe').click(function(){
+         //$('ol').append('<li>Hola, Elemento agregado</li>');//agrega un elemento al final de la lista
+         //$('ol').prepend('<li>Hola, Elemento agregado</li>'); //agrega un elemento al pricipio de la lista
+         //$('ol').append($('ol li:first'));//el primer elemento pasa a el ultimo lugar
+         //$('ol').prepend($('ol li:last'));//el ultimo elemento pasa a ser el primero
+        //clonando los elementos del ol en el elemento h1
+         var clon = $('ol li:last').text();
+         $('h1').append(clon);
+         $('ol').prepend($('ol li:last'));
+         //////////////////////
+        // $('ol li:last').remove();//eliminano el ultimo elemento
      });
    });
       </script>
