@@ -12,17 +12,21 @@
   <body>
 <h1>Metodo Get</h1>
 <h3 id="resultados"></h3>
+<input type="submit" value="Ejecutar" id="ejecutar">
      <script src="js/jquery.min.js"></script>
      <script src="https://use.fontawesome.com/e622d3b53e.js"></script>
     <script>
         //Metodo Get
    $(function(){
-     //$.get('img/ejemplo.html',function(data){
-     // $('#resultados').text(data);
-     $.get('img/ejemplo.php',{nombre:'Patricio Polito'},function(data){
-        $('#resultados').text(data);
+     $('#ejecutar').click(function(){
+         $.post('img/ejemplo2.php',{
+             nombre:"patricio",
+             metodo:"post"
+
+         },function(data,status){
+       console.log(data+" "+status);
+         });
      });
-     
    });
       </script>
     
