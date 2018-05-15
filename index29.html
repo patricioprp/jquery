@@ -12,13 +12,13 @@
   <body>
 <h1>Get json</h1>
 <h3 id="resultados"></h3>
-<input type="submit" value="Ejecutar" id="ejecutar">
+<input type="submit" value="Ejecutar" id="ejecutar" name="">
      <script src="js/jquery.min.js"></script>
     <script>
         //Metodo Get
    $(function(){
      $('#ejecutar').click(function(){
-     $gerJSON('ejemplo3.php',{
+     $.getJSON('img/ejemplo3.php',{
          nombre:"Patricio",
          metodo:"GET"
      },function(data){
