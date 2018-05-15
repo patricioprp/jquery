@@ -13,6 +13,6 @@
         video.css({
             position:"relative",height:alto,width:ancho});
      }
- })
+ });
  };
-}(jQuery))
+}(jQuery));
