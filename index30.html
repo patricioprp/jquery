@@ -13,7 +13,7 @@
 <h1>Get json</h1>
 <input type="text" id="valor1">
 <input type="text" id="valor2">
-<h3 id="resultados"></h3>
+<h3 id="resultado"></h3>
 <input type="submit" value="Sumar" id="ejecutar">
      <script src="js/jquery.min.js"></script>
     <script>
@@ -31,12 +31,12 @@
                 data:parametros,
                 url:"img/suma.php",
                 type:"post",
-                beforesend:function(){
+                beforeSend:function(){
                     console.log('Procesando tu Peticion');
                 }
             })
             .done(function(data){
-            $('#resultado').text(data);
+            $('#resultado').text("El Resultado de la Suma es: "+data);
             });
         }
    });
